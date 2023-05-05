@@ -1,6 +1,8 @@
 import React from 'react';
 
-const Product = ({ name, slug, category, image, price, countInStock, brand, rating, numReviews, description }) => {
+const Product = ({ product }) => {
+  const { name, slug, category, image, price, countInStock, brand, rating, numReviews, description } = product;
+
   return (
     <div className="product">
       <img src={image} alt={name} />
@@ -17,6 +19,7 @@ const Product = ({ name, slug, category, image, price, countInStock, brand, rati
       </div>
     </div>
   );
-}
+};
+
 
 export default Product;
