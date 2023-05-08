@@ -1,9 +1,13 @@
-import { useEffect, useReducer } from "react";
+import React, { useEffect, useReducer } from "react";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import { Helmet } from "react-helmet-async";
 import Product from "../components/Product";
 import data from "../data";
+import casioWatchImage from '../img/casio-watch.jpg';
+import tommyHilfigerPantImage from '../img/tommy-hilfiger-pant.jpg';
+import giorgioArmaniAcquaDiPerfumeImage from '../img/giorgio-armani-acqua-di-perfume.jpg';
+import giorgioArmaniBlazerImage from '../img/giorgio-armani-blazer.jpg';
 
 const reducer = (state, action) => {
   switch (action.type) {
@@ -29,6 +33,12 @@ function Home() {
     dispatch({ type: "FETCH_SUCCESS" });
   }, []);
 
+  const productsPerRow = 4;
+  const productRows = [];
+  for (let i = 0; i < products.length; i += productsPerRow) {
+    productRows.push(products.slice(i, i + productsPerRow));
+  }
+
   return (
     <div>
       <Helmet>
@@ -41,14 +51,22 @@ function Home() {
         ) : error ? (
           "Loading error"
         ) : (
-          <Row>
-            {products.map((product) => (
-              <Col key={product._id} sm={6} md={4} lg={3} className="mb-3">
-                <Product product={product}></Product>
-              </Col>
+          <>
+            {productRows.map((row) => (
+              <Row key={row[0]._id}>
+                {row.map((product) => (
+                  <Col key={product._id} sm={6} md={4} lg={3} className="mb-3">
+                    <Product product={product} image={
+                      product.name === "Casio Wrist Watch" ? casioWatchImage :
+                      product.name === "Tommy Hilfiger Fit Pant" ? tommyHilfigerPantImage :
+                      product.name === "Giorgio Armani Perfume" ? giorgioArmaniAcquaDiPerfumeImage :
+                      product.name === "Giorgio Armani Blazer" ? giorgioArmaniBlazerImage : null
+                    }></Product>
+                  </Col>
+                ))}
+              </Row>
             ))}
-          </Row>
-
+          </>
         )}
       </div>
     </div>

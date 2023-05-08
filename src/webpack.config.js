@@ -52,5 +52,11 @@ module.exports = {
     new MiniCssExtractPlugin({
       filename: 'style.css',
     }),
+    ["module-resolver", {
+        "root": ["./"],
+        alias: {
+          Components: './src/components')
+        }
+    }]
   ],
 };

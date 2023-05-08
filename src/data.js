@@ -2,9 +2,9 @@ const data = {
     products: [
       {
         name: 'Casio Wrist Watch',
-        slug: 'casio-wrist-watch',
+        slug: 'casio-watch',
         category: 'Wears',
-        image: '/img/casio-watch.jpg', // 679px × 829px
+        image: 'casio-watch.jpg', // 679px × 829px
         price: 33000,
         countInStock: 26,
         brand: 'Casio',
@@ -14,9 +14,9 @@ const data = {
       },
       {
         name: 'Tommy Hilfiger Fit Pant',
-        slug: 'adidas-fit-shirt',
+        slug: 'tommy-hilfiger-pant',
         category: 'Wears',
-        image: '/img/tommy-hilfiger-pant.jpg',
+        image: 'tommy-hilfiger-pant.jpg',
         price: 15000,
         countInStock: 25,
         brand: 'Tommy Hilfiger',
@@ -26,9 +26,9 @@ const data = {
       },
       {
         name: 'Giorgio Armani Perfume',
-        slug: 'giorgio-armani-pefume',
+        slug: 'giorgio-armani-perfume',
         category: 'Tioleteries',
-        image: '/img/giorgio-armani-acqua-di-perfume.jpg',
+        image: 'giorgio-armani-acqua-di-perfume.jpg',
         price: 25,
         countInStock: 25,
         brand: 'Giorgio Armani',
@@ -40,7 +40,7 @@ const data = {
         name: 'Giorgio Armani Blazer',
         slug: 'giorgio-armani-blazer',
         category: 'Wears',
-        image: '/img/giorgio-armani-blazer.jpg',
+        image: 'giorgio-armani-blazer.jpg',
         price: 150,
         countInStock: 8,
         brand: 'Giorgio Armani',
